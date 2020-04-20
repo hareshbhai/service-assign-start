@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../user.service';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-inactive-users',
@@ -10,7 +11,7 @@ import { UserService } from '../user.service';
 export class InactiveUsersComponent implements OnInit {
   @Input() users: string[];
 
-  constructor(private userService: UserService ) { }
+  constructor(private userService: UserService) { }
   
   ngOnInit() {
   }

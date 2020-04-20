@@ -11,12 +11,17 @@ import { UserService } from '../user.service';
 export class ActiveUsersComponent implements OnInit {
 
   @Input() users: string[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) { 
+    this.userService.userDeactivated.subscribe(
+      (status: string) => alert(status)
+    )
+  }
 
   ngOnInit() {
   }
 
   onSetToInactive(id: number) {
+    this.userService.userDeactivated.emit('Deactivated user :'+ this.userService.activeUsers[id]);
     this.userService.onSetToInactive(id);
   }
 

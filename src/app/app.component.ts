@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
+import { LoggingService } from './logging.service';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +20,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.activeUsers = this.userService.activeUsers;
     this.inactiveUsers = this.userService.inactiveUsers;
-  }
-
-  onSetToInactive(id: number) {
-    console.log(this.activeUsers[id]);   
-  }
-  onSetToactive(id: number) {
-    console.log(this.inactiveUsers[id]);    
   }
 }
